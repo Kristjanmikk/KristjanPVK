@@ -20,7 +20,11 @@ class Core
         if(file_exists($controllerfile)){
             $this->currentController = $controllerName;
             unset($url[0]);
+
         }
+        require_once '../app/controllers/'.$this->currentController.'.php';
+        $this->currentController = new $this->currentController;
+
     }
 
     public function getUrl(){
