@@ -1,11 +1,22 @@
 <?php
-class Posts
+
+
+class Posts extends Controller
 {
+
     /**
      * Posts constructor.
      */
     public function __construct()
     {
-        echo 'Posts class loaded';
+        $this->postModel = $this->model('post');
+    }
+
+    public function index(){
+        $data = array(
+            'title' => 'Welcome to Posts',
+            'content' => 'Posts view is loaded'
+        );
+        $this->view('posts/index', $data);
     }
 }
