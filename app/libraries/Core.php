@@ -12,7 +12,7 @@ class Core
     public function __construct()
     {
         $url = $this->getUrl();
-        if(file_exists('../app/controllers/'.ucwords($url[0]).'.php')){
+        if(file_exists('../app/controllers/'.ucwords($url[0]).'.php')) {
             $this->currentController = ucwords($url[0]);
             unset($url[0]);
         }
@@ -24,13 +24,13 @@ class Core
             unset($url[1]);
         }
 
-        $this->params = $url ? array_values($url) : array();
+        $this-> params = $url ? array_values($url) : array();
 
         call_user_func_array(array($this->currentController, $this->currentMethod), $this->params);
     }
     // get url data
     public function getUrl(){
-        if(isset($_GET['url'])){
+        if(isset($_GET['url'])) {
             $url = $_GET['url'];
             $url = rtrim($url, '/');
             $url = htmlentities($url);

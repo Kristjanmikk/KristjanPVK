@@ -9,14 +9,15 @@ class Posts extends Controller
      */
     public function __construct()
     {
-        $this->postModel = $this->model('post');
+        echo 'Posts is loaded<br>';
     }
 
-    public function index(){
-        $data = array(
-            'title' => 'Welcome to Posts',
-            'content' => 'Posts view is loaded'
-        );
-        $this->view('posts/index', $data);
+    public function edit($postId){
+        echo 'edit method is loaded<br>';
+        echo 'post '.$postId.' is edited<br>';
+    }
+
+    public function index() {
+        echo 'index method is loaded<br>';
     }
 }

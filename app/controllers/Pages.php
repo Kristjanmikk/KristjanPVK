@@ -3,6 +3,13 @@
 
 class Pages extends Controller
 {
+    /**
+     * Page constructor.
+    <?php
+
+
+    class Pages extends Controller
+    {
 
     /**
      * Pages constructor.
